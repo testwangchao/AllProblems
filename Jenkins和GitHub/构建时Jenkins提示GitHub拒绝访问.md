@@ -5,5 +5,5 @@
 -bash-4.1，原因是在安装jenkins时，jenkins只是创建了jenkins用户，并没有为其创建home目录。所以系统就不会在创建用户的时候，自动拷贝/etc/skel目录下的用户环境变量文件到用户家目录，也就导致这些文件不存在，出现-bash-4.1#的问题了 
 以下命令是在切换到jenkins用户下执行的！（只是用户现在显示的是-bash-4.1），通过vim ~/.bash_profile，没有的话创建即可，然后再添加这句
 export PS1='[\u@\h \W]\$'， PS1：命令行提示符环境变量，最后刷新，source ~/.bash_profile ）
-3. 然后把生成的公钥(/var/lib/jenkins/.ssh)复制到需要集成的项目内，![项目下的Deploy keys](http://192.168.16.101:8844/test.png)
+3. 然后把生成的公钥(/var/lib/jenkins/.ssh)复制到需要集成的项目内，![项目下的Deploy keys](http://note.youdao.com/noteshare?id=870f06ed0c0fa1049695f69dbee3ab36)
 4.  ssh -v git@github.com尝试连接
